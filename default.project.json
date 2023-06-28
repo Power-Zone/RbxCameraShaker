@@ -5,7 +5,7 @@
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
 			"CameraShaker": {
-				"$path": "src/CameraShaker"
+				"$path": "src/camerashaker"
 			}
 		}
 	}
