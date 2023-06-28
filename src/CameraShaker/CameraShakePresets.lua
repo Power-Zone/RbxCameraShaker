@@ -39,6 +39,27 @@ local CameraShakePresets = {
 		c.RotationInfluence = Vector3.new(4, 1, 1)
 		return c
 	end;
+
+	Lightning = function()
+		local c = CameraShakeInstance.new(2.5, 5.5, 0, 1.25)
+		c.PositionInfluence = Vector3.new(0.25, 0.25, 0.25)
+		c.RotationInfluence = Vector3.new(4, 1, 1)
+		return c
+	end;
+	
+	Gojo = function()
+		local c = CameraShakeInstance.new(1.25, 5, 0, 0.85)
+		c.PositionInfluence = Vector3.new(0.25, 0.25, 0.25)
+		c.RotationInfluence = Vector3.new(4, 1, 1)
+		return c
+	end,
+	
+	Jet = function()
+		local c = CameraShakeInstance.new(2.5, 7, 0, 1)
+		c.PositionInfluence = Vector3.new(0.25, 0.25, 0.25)
+		c.RotationInfluence = Vector3.new(4, 1, 1)
+		return c
+	end,
 	
 	
 	-- A continuous, rough shake
