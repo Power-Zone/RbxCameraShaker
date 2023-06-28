@@ -1,0 +1,55 @@
+name: Releases
+
+on: push
+
+jobs: 
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout Main
+        uses: actions/checkout@v3
+
+      - name: Setup Aftman
+        uses: ok-nick/setup-aftman@v0.3.0
+
+      - name: Install Aftman Toolchains
+        run: aftman install
+
+      - name: Install Dependencies
+        run: wally install
+
+      - name: Create Packages Directory
+        run: mkdir -p Packages
+
+      - name: Publish to Wally
+        env: 
+          WALLY_TOKEN: ${{ secrets.WALLY_AUTH_TOKEN }}
+        run: |
+          mkdir =p ~/.wally
+          printf "[tokens]\n\"https://api.wally.run/\" = \"%s\"" "$WALLY_TOKEN" >> ~/.wally/auth.toml
+          wally publish
+
+
+  development: 
+    if: ${{ github.ref == 'refs/heads/dev' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v3
+
+      - name: Setup Aftman
+        uses: ok-nick/setup-aftman@v0.3.0
+
+      - name: Install Aftman Toolchains
+        run: aftman install
+
+      - name: Install Dependencies
+        run: wally install
+
+      - name: Create Packages Directory
+        run: mkdir -p Packages
