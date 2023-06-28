@@ -1,5 +1,5 @@
 [package]
-name = "miniyear/camershaker"
+name = "miniyear/camerashaker"
 description = "Camera shake effects for Roblox games"
 version = "1.0.0"
 license = "MIT"
