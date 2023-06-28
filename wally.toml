@@ -1,0 +1,9 @@
+[package]
+name = "miniyear/camerashaker"
+description = "Camera shake effects for Roblox games"
+version = "1.11.0"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
